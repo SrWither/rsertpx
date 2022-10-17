@@ -1,0 +1,11 @@
+[[route]]
+path = "/"
+file = "index.html"
+
+[[route]]
+path = "/about"
+file = "about.html"
+
+[[route]]
+path = "/a"
+file = "about.html"

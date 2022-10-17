@@ -1,0 +1,7 @@
+[[error_page]]
+error = 404
+file = "404.html"
+
+[[error_page]]
+error = 502
+file = "502.html"
