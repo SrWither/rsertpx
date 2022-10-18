@@ -1,7 +1,9 @@
 mod read_cfg;
 mod read_errors;
 mod read_routes;
+mod phpparse;
 
+use phpparse::php_parse;
 use threadpool::ThreadPool;
 
 use crate::{read_cfg::read_cfg, read_errors::error_404, read_routes::read_routes};
@@ -48,14 +50,17 @@ fn handle_connection(mut stream: TcpStream) {
     stream.read(&mut buffer).unwrap();
 
     for route in routes.iter() {
-        // println!("Count: {}", count);
+        let contents: String;
         let bufstr = String::from(std::str::from_utf8(&buffer).unwrap());
 
         let path = format!("GET {} HTTP/1.1\r\n", route.path);
 
         let (status_line, filename) = ("HTTP/1.1 200 OK", format!("{}/{}", config_data.config.base_dir, route.file));
-
-        let contents = fs::read_to_string(filename).unwrap();
+        if config_data.config.php{
+            contents = php_parse(&filename);
+        } else {
+            contents = fs::read_to_string(filename).unwrap();
+        }
 
         response = format!(
             "{}\r\nContent-Length: {}\r\n\r\n{}",

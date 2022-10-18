@@ -32,6 +32,7 @@
 
     <main>
       <div class="container">
+        <h1><?php echo "Hello World From php"?></h1>
         <ul class="collapsible">
           <li>
             <div class="collapsible-header">

@@ -2,3 +2,6 @@
 ip = "127.0.0.1"
 port = 8080
 base_dir = "./page/"
+
+php = true
+php_path = "/usr/bin/php"

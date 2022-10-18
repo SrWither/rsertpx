@@ -1,11 +1,11 @@
 [[route]]
 path = "/"
-file = "index.html"
+file = "index.php"
 
 [[route]]
 path = "/about"
-file = "about.html"
+file = "about.php"
 
 [[route]]
 path = "/service"
-file = "service.html"
+file = "service.php"

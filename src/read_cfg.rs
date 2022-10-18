@@ -13,6 +13,8 @@ pub struct Config {
     pub ip: String,
     pub port: u16,
     pub base_dir: String,
+    pub php: bool,
+    pub php_path: String,
 }
 
 pub fn read_cfg() -> ConfigData {
