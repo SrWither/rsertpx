@@ -7,5 +7,5 @@ path = "/about"
 file = "about.html"
 
 [[route]]
-path = "/a"
-file = "about.html"
+path = "/service"
+file = "service.html"

@@ -15,7 +15,7 @@ use std::{
 fn main() {
     let config_data = read_cfg();
     println!(
-        "Servidor corriendo en: {}:{}",
+        "Server running on: {}:{}",
         config_data.config.ip, config_data.config.port
     );
 
@@ -34,7 +34,7 @@ fn main() {
         });
     }
 
-    println!("Apagando.");
+    println!("shutdowning...");
 }
 
 fn handle_connection(mut stream: TcpStream) {
